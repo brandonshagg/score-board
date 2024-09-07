@@ -50,14 +50,6 @@ This is the button to reset the game and set both scores back to zero.
 ```
 This line imports the Poppins font, which I’m using in both regular (400) and bold (700) weights.
 
-```css
-@font-face {
-    font-family: 'Cursed Timer ULiL';
-    src: url('cursed-timer-ulil-font.woff2') format('woff2'),
-         url('cursed-timer-ulil-font.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
 ```
 This block defines the custom font 'Cursed Timer ULiL', specifying the source files in both WOFF2 and WOFF formats.
 
