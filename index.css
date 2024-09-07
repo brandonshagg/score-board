@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Overused-Grotesk:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
 
 :root {
     --bg-color: #1B244A;
@@ -15,7 +15,7 @@ body {
     justify-content: center;
     align-items: center;
     background: var(--bg-color);
-    font-family: 'Overused-Grotesk', sans-serif;
+    font-family: 'Poppins', sans-serif;
     color: var(--text-color);
     overflow-x: hidden;
 }
@@ -144,7 +144,7 @@ button:active {
 }
 
 #new-game {
-    font-family: 'Overused-Grotesk', sans-serif;
+    font-family: 'Poppins', sans-serif;
     background: var(--accent-color);
     color: var(--text-color);
     padding: 1.2rem 2.5rem;
