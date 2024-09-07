@@ -1,0 +1,213 @@
+@import url('https://fonts.googleapis.com/css2?family=Overused-Grotesk:wght@400;700&display=swap');
+
+:root {
+    --bg-color: #1B244A;
+    --text-color: #EEEEEE;
+    --accent-color: #F94F6D;
+    --button-color: #9AABD8;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--bg-color);
+    font-family: 'Overused-Grotesk', sans-serif;
+    color: var(--text-color);
+    overflow-x: hidden;
+}
+
+.scoreboard-container {
+    display: flex;
+    background-color: rgba(117, 117, 117, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    flex-direction: column;
+    align-items: center;
+    padding: 3rem;
+    max-width: 700px;
+    width: 100%;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transform: translateY(50px);
+    opacity: 0;
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.scores-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 3rem;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h3 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+    overflow: hidden;
+}
+
+h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: var(--accent-color);
+    transform: translateX(-100%);
+    animation: slideIn 0.8s ease-out forwards;
+}
+
+@keyframes slideIn {
+    to {
+        transform: translateX(0);
+    }
+}
+
+.score {
+    font-family: 'Cursed Timer ULiL', monospace;
+    font-size: 6.5rem;
+    color: var(--accent-color);
+    background: #080001;
+    padding: 20px 30px;
+    border-radius: 10px;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.score:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.button-group {
+    display: flex;
+    gap: 0.8rem;
+}
+
+button {
+    font-family: 'Cursed Timer ULiL', monospace;
+    background: var(--button-color);
+    border: none;
+    color: var(--bg-color);
+    font-size: 1.3rem;
+    padding: 0.7rem 1rem;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.1s ease;
+    position: relative;
+    box-shadow: 0 5px 0 #7B8AB8;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 100%);
+}
+
+button:hover {
+    background-color: #A5B5E0;
+    transform: translateY(-2px);
+    box-shadow: 0 7px 0 #7B8AB8;
+}
+
+button:active {
+    transform: translateY(3px);
+    box-shadow: 0 2px 0 #7B8AB8;
+}
+
+#new-game {
+    font-family: 'Overused-Grotesk', sans-serif;
+    background: var(--accent-color);
+    color: var(--text-color);
+    padding: 1.2rem 2.5rem;
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-top: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.1s ease;
+    box-shadow: 0 6px 0 #C73F57;
+}
+
+#new-game:hover {
+    background: #FA6684;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 0 #C73F57;
+}
+
+#new-game:active {
+    transform: translateY(4px);
+    box-shadow: 0 2px 0 #C73F57;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.08); }
+    100% { transform: scale(1); }
+}
+
+.score-change {
+    animation: pulse 0.4s ease-in-out;
+}
+
+@media (max-width: 768px) {
+    .scoreboard-container {
+        padding: 2rem;
+    }
+
+    h3 {
+        font-size: 2rem;
+    }
+
+    .score {
+        font-size: 4.5rem;
+        padding: 15px 20px;
+    }
+
+    button {
+        font-size: 1rem;
+        padding: 0.5rem 0.8rem;
+    }
+
+    #new-game {
+        padding: 1rem 2rem;
+        font-size: 1.1rem;
+    }
+}
+
+canvas {
+    pointer-events: none;
+}
+  
+.scoreboard-container {
+    position: relative;
+    z-index: 1001;
+}

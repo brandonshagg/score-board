@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basketball Scoreboard</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="scoreboard-container">
+        <div class="scores-container">
+            <div class="column">
+                <h3>HOME</h3>
+                <div id="home-score" class="score">0</div>
+                <div class="button-group">
+                    <button onclick="increaseHomeScoreOne()">+1</button>
+                    <button onclick="increaseHomeScoreTwo()">+2</button>
+                    <button onclick="increaseHomeScoreThree()">+3</button>
+                </div>
+            </div>
+            <div class="column">
+                <h3>GUEST</h3>
+                <div id="guest-score" class="score">0</div>
+                <div class="button-group">
+                    <button onclick="increaseGuestScoreOne()">+1</button>
+                    <button onclick="increaseGuestScoreTwo()">+2</button>
+                    <button onclick="increaseGuestScoreThree()">+3</button>
+                </div>
+            </div>
+        </div>
+        <button id="new-game" onclick="resetScore()">NEW GAME</button>
+    </div>
+    <script src="index.js"></script>
+    <script src="confetti.js"></script>
+</body>
+</html>
